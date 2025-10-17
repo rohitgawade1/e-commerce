@@ -1,0 +1,23 @@
+@media screen and (max-width: 770px) {
+  .homepage-container {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .sortcategory-main-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .filtered {
+    width: 100vw;
+  }
+
+  .displaynone{
+    display: none;
+  }
+
+  .main-filter-container {
+  height: 100%;
+}
+}
