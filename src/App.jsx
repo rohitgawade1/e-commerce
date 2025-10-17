@@ -5,6 +5,8 @@ import './App.css'
 import Navbar from './componants/Navbar/Navbar'
 import Sidebar from './componants/Sidebar/Sidebar'
 import AllRoutes from './AllRoutes'
+import store from './Redux/Store'
+import { Provider } from 'react-redux'
 
 
 function App() {
@@ -12,9 +14,11 @@ function App() {
 
   return (
     <>
-      {/* <Navbar />
+      <Provider store={store}>
+        {/* <Navbar />
       <Sidebar /> */}
-      <AllRoutes />
+        <AllRoutes />
+      </Provider>
     </>
   )
 }
