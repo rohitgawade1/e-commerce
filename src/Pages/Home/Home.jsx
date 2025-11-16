@@ -3,6 +3,9 @@ import Navbar from '../../componants/Navbar/Navbar'
 import Sidebar from '../../componants/Sidebar/Sidebar'
 import { AllProductsDataAPI } from '../../Redux/ProductSlice/ProductSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import Card from '../../componants/Card/Card'
+import './Home.css'
+import { Toaster } from 'react-hot-toast'
 
 const Home = () => {
 
@@ -19,8 +22,18 @@ const Home = () => {
 
     return (
         <>
+            <Toaster />
             <Navbar />
-            <Sidebar />
+            <div className="homepage-container">
+                <Sidebar />
+                <div className="cards-container">
+                    {productsData && productsData.map((item) => {
+                        return <Card item={item} />;
+                    })}
+
+                </div>
+            </div>
+
         </>
     )
 }
