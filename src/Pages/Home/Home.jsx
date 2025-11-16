@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Card from '../../componants/Card/Card'
 import './Home.css'
 import { Toaster } from 'react-hot-toast'
+import { HashLoader } from 'react-spinners'
 
 const Home = () => {
 
@@ -26,13 +27,23 @@ const Home = () => {
             <Navbar />
             <div className="homepage-container">
                 <Sidebar />
-                <div className="cards-container">
-                    {productsData && productsData.map((item) => {
-                        return <Card item={item} />;
-                    })}
 
+                <div className="cards-container">
+                    {
+                        isLoading ?
+                            <HashLoader
+                                color="black"
+                                size={50}
+                            />
+                            :
+                            productsData && productsData.map((item) => {
+                                return <Card item={item} />;
+                            })
+
+                    }
                 </div>
             </div>
+
 
         </>
     )
